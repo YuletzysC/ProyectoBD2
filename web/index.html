@@ -1,0 +1,27 @@
+<!-- index.html -->  
+<html ng-app='hotel'>  
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Si no tienen interne lo mejor es cambiar lo de abajo por el bootstrap ya descargado. -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>  
+<body ng-controller='mainController'>  
+  <header>
+    <h1>Hoteleria </h1>
+      <nav> 
+        <ul> 
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#acerca">Acerca de</a></li>
+          <li><a href="#contacto">Contacto</a></li>         </ul> 
+      </nav>
+    </header>
+    <div id="main">
+      <!-- Aquí inyectamos las vistas -->
+      <div ng-view></div> 
+    </div>
+    <script src="bower_components/angular/angular.js"></script> 
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
