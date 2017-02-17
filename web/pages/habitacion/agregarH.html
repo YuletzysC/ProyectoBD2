@@ -1,0 +1,34 @@
+<!-- Inyeccion de la vista -->
+<div class="container">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="page-header"><h1>Agregar habitacion</h1></div>
+<div id="messages" class="well" ng-show="message">{{ message }}</div>
+    <!-- FORM -->
+    <form name="habitacionForm" ng-submit="submitForm()">
+    <div class="form-group">
+        <label>Cedula</label>
+        <input type="text" name="ci" class="form-control" ng-model="habitacion.ci">
+        <span ng-show="errorCi">{{errorCi}}</span>
+    </div>
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="name" class="form-control" ng-model="habitacion.name">
+        <span ng-show="errorhabitacionName">{{errorhabitacionName}}</span>
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" name="lastname" class="form-control" ng-model="habitacion.lastname">
+        <span ng-show="errorLastname">{{errorLastname}}</span>
+    </div>
+        <div class="form-group">
+        <label>Direccion</label>
+        <input type="text" name="dir" class="form-control" ng-model="habitacion.dir">
+    </div>
+        <div class="form-group">
+        <label>Telefono</label>
+        <input type="text" name="phone" class="form-control" ng-model="habitacion.phone">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+</div>

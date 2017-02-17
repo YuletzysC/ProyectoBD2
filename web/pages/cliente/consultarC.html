@@ -1,0 +1,28 @@
+<div class="row">
+<!-- Inyeccion de la vista -->
+<div class="container">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="page-header">
+    <h1>Consultar Cliente</h1>
+</div>
+    <!-- FORM -->
+    <div class="well" ng-show={{mostrar}}> <p>No existe este Cliente {{ci}}</p></div>
+    <div class="form-group">
+        <label>Cedula</label>
+        <input type="text" name="ci" class="form-control" ng-model="ci">
+        <button type="submit" class="btn btn-primary" ng-click="submitForm()">Buscar</button>
+    </div>
+    <div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>{{ cliente.ciCliente }}</th>
+            <th>{{ cliente.nombre }}</th>
+            <th>{{ cliente.apellido }}</th>
+            <th>{{ cliente.direccionCliente }}</th>
+            <th>{{ cliente.tlfCliente }}</th>
+        </tr>
+    </table>
+    </div>
+</div>
+</div>
+</div>

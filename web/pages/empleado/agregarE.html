@@ -1,0 +1,36 @@
+<!-- Inyeccion de la vista -->
+<div class="container">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="page-header"><h1>Agregar empleado</h1></div>
+<div id="messages" class="well" ng-show="message">{{ message }}</div>
+    <!-- FORM -->
+    <form name="empleadoForm" ng-submit="submitForm()">
+    <div class="form-group">
+        <label>Cedula</label>
+        <input type="text" name="ci" class="form-control" ng-model="empleado.ci">
+    </div>
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="name" class="form-control" ng-model="empleado.name">
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" name="lastname" class="form-control" ng-model="empleado.lastname">
+    </div>
+        <div class="form-group">
+        <label>Tipo Empleado</label>
+        <input type="text" name="tipo" class="form-control" ng-model="empleado.tipo">
+    </div>
+        <div class="form-group">
+        <label>Telefono</label>
+        <input type="tel" name="phone" class="form-control" ng-model="empleado.phone">
+    </div>
+    <div class="form-group">
+        <label>Sueldo</label>
+        <input type="number" step="any" name="sueldo" class="form-control" ng-model="empleado.sueldo">
+    </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+    </form>
+</div>
+</div>
