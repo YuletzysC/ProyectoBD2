@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="row">
+<!-- Inyeccion de la vista -->
+<div class="container">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="page-header">
+    <h1>Eliminar Habitacion</h1></div>
+    <!-- FORM -->
+
+    <div class="form-group">
+        <label>Numero de Habitacion</label>
+        <input type="number" name="nro" class="form-control" ng-model="nro">
+        <button type="submit" class="btn btn-primary" ng-click="hDelById()">Buscar</button>
+    </div>
+    <div class="well"> <p>{{mensaje}}</p></div>
+</div>
+</div>
+</div>

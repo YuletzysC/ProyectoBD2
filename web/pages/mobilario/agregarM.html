@@ -4,29 +4,22 @@
 <div class="page-header"><h1>Agregar mobilario</h1></div>
 <div id="messages" class="well" ng-show="message">{{ message }}</div>
     <!-- FORM -->
-    <form name="mobilarioForm" ng-submit="submitForm()">
+    <form name="mobilarioForm" ng-submit="addMobilario()">
     <div class="form-group">
-        <label>Cedula</label>
-        <input type="text" name="ci" class="form-control" ng-model="mobilario.ci">
-        <span ng-show="errorCi">{{errorCi}}</span>
-    </div>
-    <div class="form-group">
-        <label>Nombre</label>
-        <input type="text" name="name" class="form-control" ng-model="mobilario.name">
-        <span ng-show="errormobilarioName">{{errormobilarioName}}</span>
+        <label>Codigo</label>
+        <input type="text" name="cod" class="form-control" ng-model="mobilario.cod"
     </div>
     <div class="form-group">
-        <label>Apellido</label>
-        <input type="text" name="lastname" class="form-control" ng-model="mobilario.lastname">
-        <span ng-show="errorLastname">{{errorLastname}}</span>
+        <label>Tipo de Mobiliario</label>
+        <input type="text" name="tipo" class="form-control" ng-model="mobilario.tipo">
     </div>
-        <div class="form-group">
-        <label>Direccion</label>
-        <input type="text" name="dir" class="form-control" ng-model="mobilario.dir">
+    <div class="form-group">
+        <label>Descripcion</label>
+        <input type="text" name="desp" class="form-control" ng-model="mobilario.desp">
     </div>
-        <div class="form-group">
-        <label>Telefono</label>
-        <input type="text" name="phone" class="form-control" ng-model="mobilario.phone">
+    <div class="form-group">
+        <label>Precio</label>
+        <input type="number" step="0.01" name="precio" class="form-control" ng-model="mobilario.precio">
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
     </form>

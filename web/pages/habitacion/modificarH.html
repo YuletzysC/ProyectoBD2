@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<!-- Inyeccion de la vista -->
+<div class="container">
+<div class="col-sm-8 col-sm-offset-2">
+    <div class="page-header">
+        <h1>Modificar Empleado</h1>
+    </div>
+    <!-- FORM -->
+    <div class="well" ng-hide="{{mostrar}}"> <p>No existe este Empleado {{ci}}</p></div>
+    <div class="form-group">
+        <label> Ingresa Cedula a Buscar</label>
+        <input type="text" name="Eci" class="form-control" ng-model="Eci">
+        <button type="submit" class="btn btn-primary" ng-click="hById()">Buscar</button>
+    </div>
+<div id="messages" class="well" ng-show="message">{{ message }}</div>
+    <!-- FORM -->
+    <div class="form-group">
+        <label>Numero de Habitcacion</label>
+        <input type="text" ng-value="nroH" name="nro" class="form-control" ng-model="nro">
+    </div>
+    <div class="form-group">
+        <label>Tipo de Habitacion</label>
+        <input type="text" ng-value="tipoH" name="tipo" class="form-control" ng-model="tipo">
+    </div>
+    <div class="form-group">
+        <label>Cedula de Cliente</label>
+        <input type="text" ng-valie="ciH" name="ciC" class="form-control" ng-model="ciC">
+    </div>
+          <button class="btn btn-primary" ng-click="actualizarHabitacion()">Actualizar</button>
+</div>
+</div>

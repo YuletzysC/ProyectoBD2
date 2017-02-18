@@ -4,7 +4,7 @@
 <div class="page-header"><h1>Agregar alquiler</h1></div>
 <div id="messages" class="well" ng-show="message">{{ message }}</div>
     <!-- FORM -->
-    <form name="alquilerForm" ng-submit="submitForm()">
+    <form name="alquilerForm" ng-submit="actualizarAlquiler()">
     <div class="form-group">
         <label>Cedula</label>
         <input type="text" name="ci" class="form-control" ng-model="alquiler.ci">

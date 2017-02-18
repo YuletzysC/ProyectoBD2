@@ -4,7 +4,7 @@
 <div class="page-header"><h1>Agregar Cliente</h1></div>
 <div id="messages" class="well" ng-show="message">{{ message }}</div>
     <!-- FORM -->
-    <form name="clientForm" ng-submit="submitForm()">
+    <form name="clientForm" ng-submit="addClient()">
     <div class="form-group">
         <label>Cedula</label>
         <input type="text" name="ci" class="form-control" ng-model="client.ci">
