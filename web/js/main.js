@@ -72,15 +72,15 @@ hotel.controller('addClient', function($scope,$http) {
               tlfCliente      : $scope.client.phone,
               direccionCliente: $scope.client.dir,
           }), //Estructura del JSON Cliente que debe enviarse al servidor.
-          headers : {'Content-Type': 'application/json'} 
+          headers : {'Content-Type': 'application/json'}
          };
          //Si todo esta bien entra aqui.
         $http(req).then(function(response) {
-      
-            
+
+
                alert("Datos Enviados con exito!!!");
-               
-            
+
+
             //Si algo malo paso entra aqui.
           },function(response){
                alert("Error: Verifique bien los datos :(");
@@ -89,9 +89,9 @@ hotel.controller('addClient', function($scope,$http) {
 });
 
 hotel.controller('addEmpleado', function($scope,$http) {
-     $scope.client = {};
+     $scope.empleado = {};
         //Funcion que se ejecuta a darle Enviar en el HTML
-        $scope.submitForm = function() {
+        $scope.agregarEmpleado = function() {
         //Estructura del requerimiento guardar un cliente en la BD.
         var req = {
           method  : 'POST',
@@ -100,19 +100,18 @@ hotel.controller('addEmpleado', function($scope,$http) {
               ci              : $scope.empleado.ci,
               nombre          : $scope.empleado.name,
               apellido        : $scope.empleado.lastname,
-              tipo_empleado   : $scope.empleado.tipo,
-              sueldo          : parseFloat($scope.empleado.sueldo.toString()),
+              sueldo          : parseFloat($scope.empleado.sueldo),
               tlf             : $scope.empleado.phone,
           }), //Estructura del JSON Cliente que debe enviarse al servidor.
-          headers : {'Content-Type': 'application/json'} 
+          headers : {'Content-Type': 'application/json'}
          };
          //Si todo esta bien entra aqui.
         $http(req).then(function(response) {
-      
-            
+
+
                alert("Datos Enviados con exito!!!");
-               
-            
+
+
             //Si algo malo paso entra aqui.
           },function(response){
                alert("Error: Verifique bien los datos :(");
@@ -121,9 +120,9 @@ hotel.controller('addEmpleado', function($scope,$http) {
 });
 
 hotel.controller('buscarCliente', function($scope,$http) {
-    $scope.mostrar = false; 
+    $scope.mostrar = false;
     $scope.submitForm = function() {
-      
+
     var pet = 'recursos/cliente/' + $scope.ci;
     $http.get(pet).
         then(function(response) {
@@ -151,23 +150,38 @@ hotel.controller('eliminarCliente', function($scope,$http) {
 
 hotel.controller('modificarCliente', function($scope,$http) {
     // Simple Put request example:
+    $scope.nombre = "";
+    $scope.cedula = "";
+    $scope.apellido = "";
+    $scope.tlfCliente = "";
+    $scope.direccionCliente = "";
     $scope.mostrar = true;
     $scope.client = {};
-    $scope.Bci = "";
-    $scope.ci = "";
     $scope.name = "";
+    $scope.Bci = "";
     $scope.Buscar = function() {
     var pet = 'recursos/cliente/' + $scope.Bci;
     $http.get(pet).
         then(function(response) {
             $scope.clientes = response.data;
+            // Cargar Datos en los inputs y Limpiar
             $scope.Bci = "";
+            $scope.nombre = $scope.clientes.nombre;
+            $scope.cedula = $scope.clientes.ciCliente;
+            $scope.apellido = $scope.clientes.apellido;
+            $scope.tlfCliente = $scope.clientes.tlfCliente;
+            $scope.direccionCliente = $scope.clientes.direccionCliente;  
+            $scope.ci = $scope.clientes.ciCliente;
+            $scope.name = $scope.clientes.nombre;
+            $scope.lastname = $scope.clientes.apellido;
+            $scope.phone = $scope.clientes.tlfCliente;
+            $scope.dir = $scope.clientes.direccionCliente;  
         },function(response){
             $scope.mostrar=false;
         });
-       
+
     }
-        
+
         //Funcion que se ejecuta a darle Enviar en el HTML
         $scope.submitForm = function() {
         //Estructura del requerimiento guardar un cliente en la BD.
@@ -178,13 +192,14 @@ hotel.controller('modificarCliente', function($scope,$http) {
               tlfCliente      : $scope.phone,
               direccionCliente: $scope.dir,
           });
+          console.log(data);
          //Si todo esta bien entra aqui.
         $http.put("recursos/cliente/" + $scope.ci,data).then(function(response) {
-      
-            
+
+
                alert("Datos Modificados");
-               
-            
+
+
             //Si algo malo paso entra aqui.
           },function(response){
                alert("Error: Verifique bien los datos :(");
