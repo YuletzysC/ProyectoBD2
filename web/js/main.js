@@ -9,6 +9,26 @@ hotel.config(function($routeProvider) {
             templateUrl : 'pages/home.html',
             controller  : 'mainController'
         })
+        .when('/Cliente', {
+            templateUrl : 'pages/cliente/cliente.html',
+            controller  : 'clienteController'
+        })
+        .when('/Empleado', {
+            templateUrl : 'pages/empleado/empleado.html',
+            controller  : 'empleadoController'
+        })
+        .when('/Alquiler', {
+            templateUrl : 'pages/alquiler/alquiler.html',
+            controller  : 'alquilerController'
+        })
+        .when('/Mobiliario', {
+            templateUrl : 'pages/mobiliario/mobiliario.html',
+            controller  : 'mobiliarioController'
+        })
+        .when('/Habitacion', {
+            templateUrl : 'pages/habitacion/habitacion.html',
+            controller  : 'habitacionController'
+        })
         .when('/cAdd', {
             templateUrl : 'pages/cliente/agregarC.html',
             controller  : 'addClient'
@@ -89,6 +109,10 @@ hotel.config(function($routeProvider) {
             templateUrl : 'pages/alquiler/modificarA.html',
             controller  : 'modificarAlquiler'
         })
+        .when('/aEdit', {
+            templateUrl : 'pages/alquiler/modificarA.html',
+            controller  : 'modificarAlquiler'
+        })
         .otherwise({
             redirectTo: '/'
         });
@@ -102,6 +126,41 @@ hotel.controller('mainController', function($scope,$http) {
     $http.get('recursos/cliente/').
         then(function(response) {
             $scope.clientes = response.data;
+        });
+});
+
+hotel.controller('alquilerController', function($scope,$http) {
+    $http.get('recursos/alquiler/').
+        then(function(response) {
+            $scope.alquileres = response.data;
+        });
+});
+
+hotel.controller('habitacionController', function($scope,$http) {
+    $http.get('recursos/habitacion/').
+        then(function(response) {
+            $scope.alquileres = response.data;
+        });
+});
+
+hotel.controller('clienteController', function($scope,$http) {
+    $http.get('recursos/cliente/').
+        then(function(response) {
+            $scope.clientes = response.data;
+        });
+});
+
+hotel.controller('empleadoController', function($scope,$http) {
+    $http.get('recursos/empleado/').
+        then(function(response) {
+            $scope.empleados = response.data;
+        });
+});
+
+hotel.controller('mobiliarioController', function($scope,$http) {
+    $http.get('recursos/mobiliarioController/').
+        then(function(response) {
+            $scope.mobiliarios = response.data;
         });
 });
 

@@ -1,0 +1,31 @@
+<!-- Inyeccion de la vista -->
+<div class=" container">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h1 class="text-center">Empleados Registrados</h1>
+    <div class="table-responsive">
+      <table class="table">
+          <tr>
+              <th>Cedula</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Tipo de Empleado</th>
+              <th>Sueldo</th>
+              <th>Sucursal</th>
+
+          </tr>
+          <!-- La 'd' se vuelve una variable dentro del html y 'cliente' es la variable dentro el controlador
+              de home PD: revisar el main.js para ver el codigo del Controlador
+              Este seria un ejemplo de como consultar a la bd con angularJS
+          -->
+          <tr ng-repeat="d in empleados">
+              <th>{{ d.ci }}</th>
+              <th>{{ d.nombre }}</th>
+              <th>{{ d.apellido }}</th>
+              <th>{{ d.tipoEmpleado }}</th>
+              <th>{{ d.sueldo }}</th>
+              <th>{{ d.sucursal }}</th
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>
